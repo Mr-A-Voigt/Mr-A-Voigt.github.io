@@ -1,0 +1,84 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background-color: rgb(8, 34, 63);
+
+    background-image: url("2B542DD9-F9D4-441A-BEB7-791368B82A76.PNG");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    font-family: Arial Rounded MT Bold;
+}
+
+h3 {
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    margin: 40px;
+}
+
+img {
+    width: auto;
+    height: 100%;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+h1 {
+    color: #ffffff;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    margin: 50px;
+}
+
+h4 {
+    color: #640c0c;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+h2 {
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+    text-align: center;
+    color: #ff8000;
+}
+
+a {
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 500px;
+    text-decoration: none;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    background-color: rgb(13, 65, 15);
+}
+
+div {
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-top: 2px solid #000000;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    padding: 20px;
+    border-radius: 20px;
+}
