@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background-color: rgb(249, 240, 225);
+
+    background-image: url("ChatGPT Image 28. nov. 2025, 11.44.31.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    font-family: Arial Rounded MT Bold;
+}
+
+h1 {
+    color: #971a1a;
+    font-size: 40px;
+    background-color: #216611;
+    padding: 20px;
+    border-radius: 20px;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    margin: 50px;
+    position: fixed;
+    bottom: 0;
+    width: 80%;
+    margin: 10px;
+}
