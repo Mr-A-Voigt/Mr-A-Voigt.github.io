@@ -68,7 +68,7 @@ a {
     background-color: rgb(13, 65, 15);
 }
 
-div {
+.reveal {
     margin: 10px;
     align-items: center;
     justify-content: center;
@@ -106,4 +106,37 @@ div {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Snowfall styles */
+#snow {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+body > :not(#snow) {
+    position: relative;
+    z-index: 1;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10vh;
+    color: #ffffff;
+    user-select: none;
+    will-change: transform, opacity;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* fall animation includes vertical travel, slight horizontal drift and rotation */
+@keyframes fall {
+    0%   { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0.9; }
+    50%  { transform: translateY(45vh) translateX(25px) rotate(180deg); opacity: 0.95; }
+    100% { transform: translateY(110vh) translateX(-25px) rotate(360deg); opacity: 0.9; }
 }

@@ -72,3 +72,61 @@ div {
     text-align: center;
     border-top: 2px solid #ffffff;
 }
+
+/* reveal-on-scroll helpers */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 600ms cubic-bezier(.2,.8,.2,1), transform 600ms cubic-bezier(.2,.8,.2,1);
+    will-change: opacity, transform;
+}
+
+.reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+    animation: backInUp 1s ease-in-out;
+}
+
+@keyframes backInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Snowfall styles */
+#snow {
+    position: fixed;
+    left: 0;
+    top: -12px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+body > :not(#snow) {
+    position: relative;
+    z-index: 1;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10vh;
+    color: #ffffff;
+    user-select: none;
+    will-change: transform, opacity;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* fall animation includes vertical travel, slight horizontal drift and rotation */
+@keyframes fall {
+    0%   { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0.9; }
+    50%  { transform: translateY(45vh) translateX(25px) rotate(180deg); opacity: 0.95; }
+    100% { transform: translateY(110vh) translateX(-25px) rotate(360deg); opacity: 0.9; }
+}
