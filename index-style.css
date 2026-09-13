@@ -13,7 +13,7 @@ div.top-container {
     right: 0;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     text-align: center;
     padding: 10px;
     background-color: rgb(95, 160, 117);
