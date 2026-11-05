@@ -7,51 +7,13 @@ const ønsker = [
     // Husk at holde koden ren og pæn, så det er nemt at tilføje flere ønsker senere og læse koden.
 
     {
-    prioritet: 1,
-    type: "Elektronik",
+    prioritet: 0,
+    type: "Eksempel",
     navn: "Eksempel på produkt",
     pris: 9999.99,
-    },
-    {
-    prioritet: 2,
-    type: "Elektronik",
-    navn: "Eksempel på produkt",
-    pris: 1111.99,
     link: "AVwNoLinkYetJul.html"
-    },
-    {
-    prioritet: 3,
-    type: "Elektronik",
-    navn: "Eksempel på produkt",
-    pris: 3433.99,
-    link: "404.html"
-    },
-    {
-    type: "Elektronik",
-    navn: "Eksempel på produkt",
-    pris: 1234.99,
-    link: "404.html"
-    },
-    {
-    prioritet: 5,
-    navn: "Eksempel på produkt",
-    link: "404.html"
-    },
-    {
-    prioritet: 6,
-    type: "Elektronik",
-    navn: "Eksempel på produkt",
-    pris: 9876.99,
-    link: "404.html"
-    },
-    {
-    navn: "Eksempel på produkt",
-    },
-    {
-    prioritet: 8,
-    type: "Elektronik",
-    navn: "Eksempel på produkt",
     }
+
 
     // Tilføj flere ønsker her
     
