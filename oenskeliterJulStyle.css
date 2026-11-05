@@ -1,0 +1,171 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    background-color: #80a288;
+    user-select: none;
+    font-family: times new roman, sans-serif;
+}
+
+.top-container {
+    display: flex;
+    position: fixed;
+    top: 10px;
+    left: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-radius: 100vh;
+    margin-left: 10px;
+    margin-right: 10px;
+    z-index: 900;
+}
+
+.back-button {
+    width: auto;
+    height: 6vh;
+    max-height: 35px;
+    cursor: pointer;
+    display: inline-block;
+    border-right: 1px solid rgba(255, 255, 255, 0.18);
+    padding-right: 20px;
+    user-select: none;
+}
+
+.home-button {
+    width: auto;
+    height: 6vh;
+    max-height: 35px;
+    cursor: pointer;
+    display: inline-block;
+    border-left: 1px solid rgba(255, 255, 255, 0.18);
+    padding-left: 20px;
+}
+
+h1 {
+    font-size: 5vh;
+    color: rgb(255, 255, 255);
+    user-select: none;
+}
+
+h2 {
+    font-size: 3vh;
+    color: rgb(255, 255, 255);
+    user-select: none;
+}
+
+.container {
+    position: center;
+    height: 75vh;
+    width: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.oenskelister {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 3vh;
+    user-select: none;
+}
+
+button {
+    text-align: center;
+    text-decoration: none;
+    font-size: 3vh;
+    padding: 10px;
+    border-radius: 500px;
+    background-color: rgb(14, 65, 15);
+    color: rgb(255, 255, 255);
+    font-family: times new roman, sans-serif;
+    border: none;
+    cursor: pointer;
+}
+
+.almlist {
+    text-align: center;
+    text-decoration: none;
+    font-size: 3vh;
+    padding: 10px;
+    border-radius: 500px;
+    background-color: rgb(14, 65, 15);
+    color: rgb(255, 255, 255);
+}
+
+.almlist:hover {
+    background-color: rgb(14, 65, 15);
+    color: rgb(255, 255, 255);
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.andrelister {
+    text-align: center;
+    text-decoration: none;
+    position: fixed;
+    bottom: 10px;
+}
+
+.morelist {
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.8vh;
+    padding: 10px;
+    border-radius: 500px;
+    color: rgb(255, 255, 255);
+}
+
+
+
+
+
+
+/* Snowfall styles */
+#snow {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+body > :not(#snow) {
+    position: relative;
+    z-index: 1;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10vh;
+    color: #ffffff;
+    user-select: none;
+    will-change: transform, opacity;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* fall animation includes vertical travel, slight horizontal drift and rotation */
+@keyframes fall {
+    0%   { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0.9; }
+    50%  { transform: translateY(45vh) translateX(25px) rotate(180deg); opacity: 0.95; }
+    100% { transform: translateY(110vh) translateX(-25px) rotate(360deg); opacity: 0.9; }
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aksels Jule Ønskeliste 2026</title>
+    <link rel="icon" type="image/png" href="AVFavicon2026.png">
+    <link rel="stylesheet" href="AVJuleList2026Style.css">
+    <script src="snowfall.js" defer></script>
+    <script src="AkselOensker.js"></script>
+</head>
+<body>
+    <div class="top-container">
+        <img src="back.button.AVList.svg" alt="Tilbage" class="back-button" onclick="window.location.href='oenskelisterJul.html';">
+        <h1>Aksels Ønskeliste</h1>
+        <img src="home.button.AVList.svg" alt="Hjem" class="home-button" onclick="window.location.href='index.html';">
+    </div>
+
+    <div id="snow" aria-hidden="true"></div>
+
+    <div class="topSpace"></div>
+
+    <div class="sort-container">
+        <label for="sortering">Sorter efter:</label>
+            <select id="sortering">
+                <option value="prioritet">Prioritet</option>
+                <option value="pris-lav">Pris: lavest først</option>
+                <option value="pris-hoj">Pris: højest først</option>
+            </select>
+    </div>
+
+    <div class="reveal">
+        <h6>Bemærk: Dette er en testliste, og de faktiske ønsker vil blive vist her, når de er tilgængelige.</h6>
+    </div>
+
+    <div id="onskeliste"></div>
+
+    <div class="buttomSpace"></div>
+
+    <script>
+        const liste = document.querySelector("#onskeliste");
+        const sortering = document.querySelector("#sortering");
+
+        function visØnsker() {
+            const sorteredeØnsker = [...ønsker];
+
+            switch (sortering.value) {
+            case "pris-lav":
+                sorteredeØnsker.sort((a, b) => a.pris - b.pris);
+                break;
+            case "pris-hoj":
+                sorteredeØnsker.sort((a, b) => b.pris - a.pris);
+                break;
+            default:
+                sorteredeØnsker.sort((a, b) => a.prioritet - b.prioritet);
+            }
+
+            liste.innerHTML = sorteredeØnsker.map(ønske => `
+                <article class="reveal">
+                    ${visOverskrift("h3", ønske.prioritet ? `Prioritet ${ønske.prioritet}` : "")}
+                    ${visOverskrift("h4", ønske.type)}
+                    ${visOverskrift("h2", ønske.navn)}
+                    ${visPris(ønske.pris)}
+                    ${visLink(ønske.link)}
+                </article>
+            `).join("");
+
+            function visOverskrift(tag, værdi, klasse = "") {
+                if (værdi === undefined || værdi === null || værdi === "") {
+                    return "";
+                }
+
+                return `<${tag} class="${klasse}">${værdi}</${tag}>`;
+                }
+
+                function visPris(pris) {
+                if (pris === undefined || pris === null || pris === "") {
+                    return "";
+                }
+
+                return `<p>Pris: ${Number(pris).toLocaleString("da-DK", {
+                    style: "currency",
+                    currency: "DKK"
+                })}</p>`;
+                }
+
+                function visLink(link) {
+                if (!link || link.trim() === "") {
+                    return "";
+                }
+
+                return `
+                    <a class="SeOenske" href="${link}" target="_blank" rel="noopener">
+                    Se ønsket
+                    </a>
+                `;
+            }
+
+            const reveals = document.querySelectorAll('.reveal');
+
+            if ('IntersectionObserver' in window) {
+                const io = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('in-view');
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15 });
+
+                reveals.forEach(el => io.observe(el));
+            } else {
+                // fallback
+                const onScroll = () => {
+                    reveals.forEach(el => {
+                        const r = el.getBoundingClientRect();
+                        if (r.top < window.innerHeight - 50) el.classList.add('in-view');
+                    });
+                };
+                onScroll();
+                window.addEventListener('scroll', onScroll, { passive: true });
+            }
+        }
+
+        sortering.addEventListener("change", visØnsker);
+        visØnsker();
+    </script>
+
+</body>
+</html>

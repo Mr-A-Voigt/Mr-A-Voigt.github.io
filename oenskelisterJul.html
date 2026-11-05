@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juleønsker 2026</title>
+    <link rel="icon" type="image/png" href="AVFavicon2026.png">
+    <link rel="stylesheet" href="oenskeliterJulStyle.css">
+    <script src="AVJuleListVisitering.js"></script>
+    <script src="snowfall.js" defer></script>
+</head>
+<body>
+    <div id="snow" aria-hidden="true"></div>
+    <div class="top-container">
+        <img src="back.button.svg" alt="Tilbage" class="back-button" onclick="window.history.back();">
+        <img src="home.button.svg" alt="Hjem" class="home-button" onclick="window.location.href='index.html';">
+    </div>
+    <div class="container">
+        <h1>Ønskelister jul 26</h1>
+        <h2>Vælg en ønskeliste</h2>
+        <div class="oenskelister">
+
+            <!-- skift link til "unskelisterCountDown.html" når ønskelisterne ikke er klar -->
+            <!-- Aksels (min) ønskeliste køre automatisk. indstil derfor åbningstiden i AVJuleListVisitering.js og oenskelisteCountDown.html -->
+            <!-- skift links til "Carl_oenskeliste.html","AkselJul2026Oensker.html" eller "Erik_oenskeliste.html" når ønskelisterne er klar -->
+            <!-- <a href="Carl_oenskeliste.html" class="almlist">Carls Ønskeliste</a> -->
+            <button onclick="visitAkselJuleList()" class="almlist">Aksels Ønskeliste</button>
+            <!-- <a href="Erik_oenskeliste.html" class="almlist">Eriks Ønskeliste</a> -->
+
+        </div>
+        <div class="andrelister">
+            <a href="andrelister.html" class="morelist">Flere ønskelister</a>
+        </div>
+    </div>
+</body>
+</html>

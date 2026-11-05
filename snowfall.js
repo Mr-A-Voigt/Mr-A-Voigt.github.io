@@ -17,8 +17,8 @@
         flake.style.left = `${rand(0, 100)}%`;
 
         // size
-        const size = Math.round(rand(10, 28));
-        flake.style.fontSize = size + 'px';
+        const size = Math.round(rand(0.3, 1.8));
+        flake.style.fontSize = size + 'vw';
 
         // opacity
         flake.style.opacity = (rand(0.4, 1)).toFixed(2);

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Lag_1" data-name="Lag 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+      path {
+        fill: #ffffff;
+      }
+    </style>
+  </defs>
+  <path d="M130,140H30c-5.52,0-10-4.48-10-10v-50c0-2.65,1.05-5.2,2.93-7.07l50-50c3.91-3.91,10.24-3.9,14.14,0l50,50c1.88,1.88,2.93,4.42,2.93,7.07v50c0,5.52-4.48,10-10,10ZM40,120h80v-35.86l-40-40-40,40v35.86Z"/>
+  <polyline class="cls-1" points="0 160 0 0 160 0"/>
+</svg>

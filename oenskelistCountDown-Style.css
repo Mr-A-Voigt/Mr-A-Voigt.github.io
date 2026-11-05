@@ -1,0 +1,92 @@
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: light-dark(#702424, rgb(0, 0, 0));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#countdown {
+  font-size: 2em;
+  color: rgb(255, 255, 255);
+}
+
+.all {
+  position: center;
+  height: auto;
+  width: auto;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgb(14, 65, 15);
+  border-radius: 20px;
+  border: 2px solid rgb(179, 146, 37);
+}
+
+p {
+  font-size: 1.5em;
+  color: rgb(255, 255, 255);
+}
+
+a {
+    color: rgb(179, 146, 37);
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid rgb(179, 146, 37);
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    width: 200px;
+    margin-top: 6vh;
+    margin-bottom: 3vh;
+}
+
+a:hover {
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* Snowfall styles */
+#snow {
+    position: fixed;
+    left: 0;
+    top: -12px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body > :not(#snow):not(.top-container) {
+    position: relative;
+    z-index: 1;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10vh;
+    color: #ffffff;
+    user-select: none;
+    will-change: transform, opacity;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* fall animation includes vertical travel, slight horizontal drift and rotation */
+@keyframes fall {
+    0%   { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0.9; }
+    50%  { transform: translateY(45vh) translateX(25px) rotate(180deg); opacity: 0.95; }
+    100% { transform: translateY(110vh) translateX(-25px) rotate(360deg); opacity: 0.9; }
+}

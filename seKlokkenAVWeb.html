@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live HTML Clock</title>
+    <link rel="icon" type="image/png" href="AVFavicon2026.png">
+    <style>
+        body {
+            background: #90b195;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .clock {
+            color: rgb(255, 255, 255);
+            font-family: arial, sans-serif;
+            font-size: 6rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="clock" id="my-clock">00.00.00</div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            
+            document.getElementById('my-clock').textContent = `${hours}.${minutes}.${seconds}`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+
+</body>
+</html>

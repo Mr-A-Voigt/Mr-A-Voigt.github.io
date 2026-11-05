@@ -3,12 +3,13 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    text-align: center;
+    overflow-x: hidden;
 }
 
 div.top-container {
     display: flex;
-    top: 0;
+    position: sticky;
+    top: 10px;
     left: 0;
     right: 0;
     flex-direction: row;
@@ -17,8 +18,10 @@ div.top-container {
     text-align: center;
     padding: 10px;
     background-color: rgb(95, 160, 117);
-    border-radius: 20px;
-    margin: 10px;
+    border-radius: 100vh;
+    margin-left: 10px;
+    margin-right: 10px;
+    z-index: 100;
 }
 
 div.logo {
@@ -29,14 +32,110 @@ div.logo {
 
 div.logo h1 {
     color: #ffffff;
-    font-size: 40px;
+    font-size: 3.5vh;
     margin: 0;
-    text-align: center;
 }
 
 div.top-container img {
-    width: 25px;
-    height: 25px;
+    width: 3vh;
+    height: auto;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.oenskelisterJul {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    background-color: rgb(135, 36, 36);
+    border-radius: 20px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+#snow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.oenskelisterJul > :not(#snow) {
+    position: relative;
+    z-index: 1;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10%;
+    color: #ffffff;
+    user-select: none;
+    will-change: transform, opacity;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10%) translateX(0) rotate(0deg);
+        opacity: 0.9;
+    }
+    50% {
+        transform: translateY(1020%) translateX(25px) rotate(180deg);
+        opacity: 0.95;
+    }
+    100% {
+        transform: translateY(1950%) translateX(-25px) rotate(360deg);
+        opacity: 0.9;
+    }
+}
+
+.oenskelisterJul-text {
+    text-align: left;
+    margin-bottom: 10px;
+    text-decoration: none;
+    text-decoration-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+}
+
+h2 {
+    font-size: 4vh;
+    color: rgb(255, 255, 255);
+}
+
+.oenskelisterJul-link {
+    justify-content: right;
+    display: flex;
+    text-align: right;
+    background-color: rgb(14, 65, 15);
+    border-radius: 500px;
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    width: fit-content;
+}
+
+.oenskelisterJul-link:hover {
+    background-color: rgb(14, 65, 15);
+    color: rgb(255, 255, 255);
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.tom-test {
+    height: 100px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.8vh;
+    padding: 10px;
+    border-radius: 500px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(14, 65, 15);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5vw;
+    margin-right: 5vw;
 }

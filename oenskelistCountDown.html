@@ -1,0 +1,41 @@
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="oenskelistCountDown-Style.css">
+    <title>Document</title>
+    <link rel="icon" type="image/png" href="AVFavicon2026.png">
+    <script src="snowfall.js" defer></script>
+    <script src="OenskelisteCountDownDate.js"></script>
+</head>
+<body>
+
+  <div id="snow" aria-hidden="true"></div>
+
+  <div class="all">
+    <p>Ønskelisterne åbner om</p>
+    <div id="countdown"></div>
+    <a href="oenskelisterJul.html">Gå tilbage</a>
+  </div>
+  <script>
+    const slutDato = new Date("2026-11-10T01:00:00");
+
+    const timer = setInterval(() => {
+      const nu = new Date();
+      const forskel = slutDato - nu;
+
+      if (forskel <= 0) {
+        window.location.href = "AkselJul2026Oensker.html";
+      }
+
+      const dage = Math.floor(forskel / (1000 * 60 * 60 * 24));
+      const timer = Math.floor((forskel / (1000 * 60 * 60)) % 24);
+      const minutter = Math.floor((forskel / (1000 * 60)) % 60);
+      const sekunder = Math.floor((forskel / 1000) % 60);
+
+      document.getElementById("countdown").textContent =
+        `${dage} dage, ${timer} timer, ${minutter} minutter og ${sekunder} sekunder`;
+      }, 1000);
+  </script>
+</body>
+</html>
