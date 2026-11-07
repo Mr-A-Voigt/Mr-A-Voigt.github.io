@@ -1,1 +1,96 @@
-/* Her er ikke noget endnu, men det kommer måske senere */
+:root {
+  color-scheme: light dark;
+}
+
+/* css var lidt umulig idag så det her blev løsningen */
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: light-dark(#702424, rgb(0, 0, 0));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  height: 80vh;
+}
+
+.content {
+  position: center;
+  max-height: 90%;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgb(14, 65, 15);
+  border-radius: 20px;
+  border: 2px solid rgb(179, 146, 37);
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 3vh;
+    text-align: center;
+    margin: 4vh;
+}
+
+h2 {
+    color: #ffffff;
+    font-size: 3vh;
+    text-align: center;
+    width: 70vw;
+}
+
+p {
+    font-size: 2.5vh;
+    text-align: center;
+    color: #ffffff;
+}
+
+a {
+    font-size: 2.5vh;
+    color: rgb(179, 146, 37);
+    background-color: rgb(13, 86, 29);
+    padding: 15px;
+    border-radius: 500px;
+    text-decoration: none;
+    margin-top: 3vh;
+    margin-bottom: 40px;
+    border: 2px solid rgb(179, 146, 37);
+}
+
+/* Snowfall styles */
+#snow {
+    position: fixed;
+    left: 0;
+    top: -12px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body > :not(#snow):not(.top-container) {
+    position: relative;
+    z-index: 1;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10vh;
+    color: #ffffff;
+    user-select: none;
+    will-change: transform, opacity;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* fall animation includes vertical travel, slight horizontal drift and rotation */
+@keyframes fall {
+    0%   { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0.9; }
+    50%  { transform: translateY(45vh) translateX(25px) rotate(180deg); opacity: 0.95; }
+    100% { transform: translateY(110vh) translateX(-25px) rotate(360deg); opacity: 0.9; }
+}
