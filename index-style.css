@@ -1,5 +1,9 @@
+:root {
+  color-scheme: light dark;
+}
+
 body {
-    background-color: rgb(174, 194, 166);
+    background-color: light-dark(#aeC2a6, #000000);
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -17,7 +21,7 @@ div.top-container {
     justify-content: center;
     text-align: center;
     padding: 10px;
-    background-color: rgb(95, 160, 117);
+    background-color: light-dark(#5fa075, #17521a);
     border-radius: 100vh;
     margin-left: 10px;
     margin-right: 10px;
@@ -50,7 +54,7 @@ div.top-container img {
     margin-top: 5vh;
     margin-left: 5vw;
     margin-right: 5vw;
-    background-color: rgb(135, 36, 36);
+    background-color: light-dark(#872424, #581111);
     border-radius: 20px;
     padding: 20px;
     overflow: hidden;
