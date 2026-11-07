@@ -1,5 +1,5 @@
 function visitAkselJuleList() {
-    const AabningsDato = new Date("2026-20-10T01:00:00");
+    const AabningsDato = new Date("2026-11-20T01:00:00");
       if (Date.now() >= AabningsDato) {
         window.location.href = "AkselJul2026Oensker.html";
       } else {
