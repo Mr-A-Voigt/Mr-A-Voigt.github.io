@@ -1,10 +1,14 @@
+:root {
+  color-scheme: light dark;
+}
+
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #702424;
+    background-color: light-dark(#702424, #000000);
     font-family: Arial Rounded MT Bold;
     overflow-x: hidden;
 }
